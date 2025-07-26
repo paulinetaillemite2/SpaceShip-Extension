@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Dormir moins bete",
+    "description": "Extension qui affiche des infos culturelles aléatoires",
+    "version": "1.0",
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    },
+    "action": {
+        "default_icon": "ananas.png"
+    },
+    "icons": {
+        "16": "ananas.png",
+        "32": "ananas.png",
+        "48": "ananas.png",
+        "128": "ananas.png"
+    },
+    "content_scripts": [
+    {"matches": ["<all_urls>"],
+    "css": ["style.css"]  }]
+}

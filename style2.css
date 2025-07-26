@@ -1,0 +1,366 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-image: url(./nathan-anderson--6SPgTK2pOE-unsplash.jpg);
+    background-size: cover;
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    color: white;
+}
+
+img {
+    max-width: 100%;
+
+}
+
+/* Main Container :
+- header
+- section
+- footer */
+.mainContainer {
+    min-height: 100vh;
+}
+
+
+/* En-tête */
+.header {
+    display: flex;
+    align-content: center;
+    justify-content: end;
+    padding: 2rem;
+}
+
+/* Barre de recherche */
+.search-container {
+    display: flex;
+    gap: 0.2rem;
+    max-height: 2rem;
+}
+
+.search {
+    width: 80%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-radius: 20px;
+    text-align: center;
+    background-color: gainsboro;
+}
+
+.search:focus {
+    outline: none;
+}
+
+.search::placeholder {
+    border: none;
+    color: white;
+}
+
+.button {
+    max-width: 8%;
+    border-radius: 25%;
+    border: none;
+}
+
+.button img {
+    height: 80%;
+}
+
+
+
+/* Section principale, englobant les infos extension, l'image et les infos image */
+section {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+.titre {
+    text-align: left;
+    padding-left: 3rem;
+    overflow: hidden;
+    white-space: nowrap;
+    animation:
+        typing 2.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+}
+
+
+/* ANIMATION EFFET TYPING SUR LE TITRE */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: black;
+    }
+}
+
+/* Footer */
+.footer {
+    grid-row: 4;
+}
+
+
+/* Version Desktop */
+@media screen and (min-width: 1024px) {
+    .mainContainer {
+        height: 100%;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        grid-template-rows: 10% 1fr 10%;
+    }
+
+    section {
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        padding-top: 0;
+    }
+
+    .about {
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+        padding: 3rem;
+    }
+
+    .intro {
+        text-justify: auto;
+        padding: 2rem 0;
+    }
+
+    /* DIV DE LA PHOTO ET DE SES INFOS*/
+    .daily {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .picInfos {
+        position: absolute;
+        max-height: 38em;
+        max-width: 34em;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+        pointer-events: none;
+        color: white;
+        backdrop-filter: none;
+        text-align: left;
+        padding: 2rem;
+        text-justify: auto;
+    }
+
+    .titre {
+        font-size: 2.8rem;
+        padding-bottom: 0;
+    }
+
+    .intro {
+        text-align: left;
+        font-weight: 100;
+        padding-left: 3rem;
+        padding-right: 2rem;
+        margin-top: -30px;
+    }
+
+    #title,
+    #date,
+    #explanation {
+        color: white;
+        backdrop-filter: none;
+    }
+
+
+    .daily:hover .picInfos {
+        opacity: 1;
+
+    }
+
+
+    #dailyImage {
+        height: 100%;
+        width: 100%;
+        max-height: 38em;
+        max-width: 38em;
+        object-fit: cover;
+        align-items: center;
+        border: 0px solid rgb(255, 255, 255);
+        border-radius: 10px;
+        box-shadow: rgba(252, 186, 230, 0.4) 0px 2px 4px, rgba(252, 186, 230, 0.4) 0px 7px 13px -3px, rgba(252, 186, 230, 0.4) 0px -3px 0px inset;
+        filter: brightness((100%)) blur(0);
+        transition: filter 0.3s, transform 0.3s;
+    }
+
+    /* Effet de blur sur over*/
+    #dailyImage:hover {
+        filter: brightness(50%) blur(5px);
+        transition: filter 0.3s, transform 0.3s;
+        transform: scale(1.05);
+
+    }
+
+}
+
+/*Panier*/
+.modal {
+    display: none;
+    color: black;
+
+}
+
+/*.modal-back {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .25)
+}*/
+
+.modal-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    padding: 25px;
+    background: rgba(255, 255, 255);
+    transform: translate(-50%, -50%);
+    filter: brightness((50%)) blur(20px);
+    border-radius: 10px;
+    box-shadow: rgba(252, 186, 230, 0.4) 0px 2px 4px, rgba(252, 186, 230, 0.4) 0px 7px 13px -3px, rgba(252, 186, 230, 0.4) 0px -3px 0px inset;
+
+    /*opacity: 0.7;*/
+    /*background-color: rgba(255, 255, 255, 0);*/
+}
+
+#modal-close {
+    float: right;
+    font-size: 25px;
+    color: red;
+}
+
+
+/* BOUTON ADD TO CART */
+.addToCart {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-weight: lighter;
+    font-size: 12px;
+    padding: 0.5em 1em;
+    /* adjust the padding to your liking */
+    margin-left: 3rem;
+    color: white;
+    background: #ad5389;
+    background: linear-gradient(0deg, rgba(77, 54, 208, 1) 0%, rgba(132, 116, 254, 1) 100%);
+    border: none;
+    box-shadow: 0 0.7em 1.5em -0.5em #4d36d0be;
+    letter-spacing: 0.05em;
+    border-radius: 20em;
+}
+
+.addToCart svg {
+    margin-right: 8px;
+}
+
+.addToCart:hover {
+    box-shadow: 0 0 2.5px #634475, 0 0 10px #634475, 0 0 25px #634475, 0 0 50px #634475
+}
+
+.addToCart:active {
+    transform: scale(0.95)
+}
+
+
+/* BOUTON FAVORITE*/
+.openPanier {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-weight: lighter;
+    font-size: 12px;
+    padding: 0.5em 1em;
+    /* adjust the padding to your liking */
+    margin-left: 3rem;
+    color: white;
+    background: #ad5389;
+    background: linear-gradient(0deg, rgba(77, 54, 208, 1) 0%, rgba(132, 116, 254, 1) 100%);
+    border: none;
+    box-shadow: 0 0.7em 1.5em -0.5em #4d36d0be;
+    letter-spacing: 0.05em;
+    border-radius: 20em;
+    height: 2rem;
+}
+
+.openPanier svg {
+    margin-right: 8px;
+}
+
+.openPanier:hover {
+    box-shadow: 0 0 2.5px #634475, 0 0 10px #634475, 0 0 25px #634475, 0 0 50px #634475
+}
+
+.openPanier:active {
+    transform: scale(0.95);
+    box-shadow: 0 0.3em 1em -0.5em #4d36d0be;
+}
+
+ul {
+    display: flex;
+    padding-left: 0;
+    flex-direction: column;
+
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+
+ul li>*:nth-child(n+2) {
+
+    margin-right: 0;
+
+}
+
+
+ul li>*:last-child {
+
+    margin-left: auto;
+
+}
+
+.deleteButton {
+    background: transparent;
+    border: none;
+    max-width: 3.4em;
+    padding-top: 0.4em;
+}
+
+
+.credit {
+    text-align: left;
+    margin-left: 8rem;
+}

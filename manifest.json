@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "Enter the spaceship",
+    "description": "Get one personalized feed with Nasa space pics",
+    "version": "1.0",
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    },
+    "action": {
+        "default_icon": "astronaute.png"
+    },
+    "icons": {
+        "16": "astronaute.png",
+        "32": "astronaute.png",
+        "48": "astronaute.png",
+        "128": "astronaute.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "css": [
+                "style2.css"
+            ]
+        }
+    ]
+}

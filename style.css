@@ -1,0 +1,236 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background-image: url(./nathan-anderson--6SPgTK2pOE-unsplash.jpg);
+    background-size: cover;
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    color:white;
+}
+
+.mainContainer {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 45% 1fr;
+    grid-template-rows: 5rem 1fr 5rem;
+    justify-content: space-around;
+}
+
+.header {
+    grid-column: span 2;
+    grid-template-rows: minmax(2rem, 4rem);
+    grid-template-areas: "header";
+    align-items: center;
+    justify-items: center;
+    justify-content: space-between;
+    display: grid;
+}
+
+.logo {
+    grid-column: 1;
+    height: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: flex;
+    padding-top: 2em;
+    padding-left: 2em;
+}
+
+.search-container {
+    padding-left: 2%;
+    position: relative;
+    display: inline-block;
+}
+
+.search {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+    height: 2em;
+    width: 30em;
+    border-radius: 20px;
+    text-align: center;
+    background-color: gainsboro;
+    border: none;
+}
+
+.button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0 50% 50% 0;
+    background-color: white;
+}
+
+#searchIcon {
+    height: 16px;
+    width: 16px;
+    vertical-align: middle;
+}
+
+.search:focus {
+    outline: none;
+}
+
+.search::placeholder {
+    border: none;
+    color: white;
+}
+
+
+.button img {
+    max-height: 1.5em;
+}
+
+.about {
+    justify-self: center;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 3rem;
+}
+
+/* ANIMATION EFFET TYPING SUR LE TITRE */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: black;
+    }
+}
+
+.titre {
+    font-size: 2.8rem;
+    text-align: left;
+    padding-left: 3rem;
+    overflow: hidden;
+    /* border-right: .15em solid black; */
+    white-space: nowrap;
+    animation:
+        typing 1.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+}
+
+.intro {
+    text-align: left;
+    font-weight: 100;
+    padding-left: 3rem;
+    padding-right: 2rem;
+    margin-top: -30px;
+
+}
+
+
+/* DIV DE LA PHOTO ET DE SES INFOS*/
+.daily {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: relative;
+}
+
+.picInfos {
+    position: absolute;
+    max-height: 38em;
+    max-width: 38em;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
+    color: white;
+    backdrop-filter: none;
+    text-align: left;
+}
+
+#title,
+#date,
+#explanation {
+    color: white;
+    backdrop-filter: none;
+}
+
+
+.daily:hover .picInfos {
+    opacity: 1;
+}
+
+
+#dailyImage {
+    height: 100%;
+    width: 100%;
+    max-height: 38em;
+    max-width: 38em;
+    object-fit: cover;
+    align-items: center;
+    border: 0px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    filter: blur(0);
+    transition: filter 0.3s, transform 0.3s;
+}
+
+/* Effet de blur sur over*/
+#dailyImage:hover {
+    filter: blur(5px);
+    transition: filter 0.3s, transform 0.3s;
+    transform: scale(1.05);
+}
+
+
+
+.footer {
+    grid-column: span 2;
+}
+
+@media screen and (max-width: 1024px) {
+    body {
+        margin: 0;
+        min-height: 100vh;
+        background-image: url(./Design\ sans\ titre\ \(1\).svg);
+        background-size: cover;
+        font-family: "Titillium Web", sans-serif;
+        font-weight: 200;
+        font-style: normal;
+    }
+
+    .mainContainer {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 5rem 1fr 1fr 5rem;
+        justify-content: space-around;
+    }
+
+    .header {
+        align-items: center;
+        justify-items: center;
+        justify-content: space-around;
+    }
+
+    .daily {
+        display: grid;
+        grid-row: 3 /4;
+        justify-content: space-around;
+        align-items: center;
+    }
+}

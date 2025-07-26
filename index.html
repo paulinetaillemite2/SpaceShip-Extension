@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>New Tab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link href="style2.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="img" href="/astronauteicon.png">
+</head>
+
+<body>
+    <div class="mainContainer">
+        <!-- Espace du haut incluant le logo et la barre de recherche -->
+        <div class="header">
+            <button class="openPanier" id="openPanier"><svg width="24px" height="24px" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"/> <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                <g id="SVGRepo_iconCarrier"> <path d="M5.5 3.50027V21.5003C5.5 21.9603 6.08 22.1803 6.38 21.8203L11.62 15.6403C11.82 15.4003 12.18 15.4003 12.38 15.6403L17.62 21.8203C17.92 22.1703 18.5 21.9603 18.5 21.5003V3.50027C18.5 3.22027 18.28 3.00027 18 3.00027H6C5.72 3.00027 5.5 3.23027 5.5 3.50027Z" stroke="#ffffff" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/> </g> </svg>
+                <span>FAV'S </span></button>
+
+            <!-- <form action="https://google.com/search" method="GET">
+                <div class="search-container">
+                    <input class="search" type="text" name="q" placeholder="Google" />
+                    <button class="button" type="submit"><img id="searchIcon" alt="search icon"
+                            src="./loupe-search-svgrepo-com.svg"></button>
+                </div>
+            </form>  -->
+
+        </div>
+        <section>
+
+            <!-- Titre et description de l'extension  -->
+
+            <div class="about">
+                <h1 class="titre">ENTER THE SPACESHIP</h1>
+                <p class="intro">Embark on a cosmic journey with our SPACE ODDITY EXTENSION. Delve into the
+                    mysteries of the universe as we fetch fresh insights from NASA's API every day. Each visit promises a captivating
+                    discovery a new star, a fascinating fact about the galaxy, or a glimpse into the wonders of space.
+                    Expand your astronomy knowledge and ignite your curiosity as we navigate the boundless expanse of
+                    the
+                    cosmos together. Join us on this celestial adventure, where every day brings a new frontier to
+                    explore.
+                </p>
+                <button id="addToCart" class="addToCart">
+                    <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M1 14.5a6.496 6.496 0 0 1 3.064-5.519 8.001 8.001 0 0 1 15.872 0 6.5 6.5 0 0 1-2.936 12L7 21c-3.356-.274-6-3.078-6-6.5zm15.848 4.487a4.5 4.5 0 0 0 2.03-8.309l-.807-.503-.12-.942a6.001 6.001 0 0 0-11.903 0l-.12.942-.805.503a4.5 4.5 0 0 0 2.029 8.309l.173.013h9.35l.173-.013zM13 12h3l-4 5-4-5h3V8h2v4z" fill="currentColor"></path></svg>
+                    <span>SAVE FOR LATER </span>
+            </div>
+
+            <!-- Image quotidienne -->
+            <div class="daily" id="daily">
+                <img id="dailyImage" class="dailyImage" src="">
+                <div class="picInfos" id="picInfos">
+                    <h2 id="title" class="title"> </h2>
+                    <h3 id="date" class="date"></h3>
+                    <p id="explanation" class="explanation"></p>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <div class="footer">
+            <!--Panier-->
+            <div class="modal" id="modal">
+                <div class="modal-container">
+                    <div class="cart">
+                        <a href="#" id="modal-close" style="text-decoration:none">[X]</a>
+                        <h2>FAV'S</h2>
+                        <ul id="cart-list">
+                        </ul>
+                    </div>
+                 
+                </div>
+            </div>
+        </div>
+        <p class="credit">Student project created by Pauline Taillemite, Vincent Prevost, Patrick Yav and Thimothee Terrassier.</p>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
